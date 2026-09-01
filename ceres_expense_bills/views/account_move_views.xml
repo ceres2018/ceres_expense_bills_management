@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form: show expense metadata on expense bills only -->
+    <record id="view_move_form_expense_bill" model="ir.ui.view">
+        <field name="name">account.move.form.expense.bill</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="ref" position="after">
+                <field name="is_expense_bill" invisible="1"/>
+                <field name="expense_category_ids" widget="many2many_tags" readonly="1"
+                       invisible="not is_expense_bill"/>
+                <field name="expense_employee_ids" widget="many2many_tags" readonly="1"
+                       invisible="not is_expense_bill"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Exclude expense bills from standard vendor bill actions (Odoo 18 domains) -->
+    <record id="account.action_move_in_invoice_type" model="ir.actions.act_window">
+        <field name="domain">[
+            ('move_type', 'in', ['in_invoice', 'in_refund']),
+            ('is_expense_bill', '=', False),
+        ]</field>
+    </record>
+
+    <record id="account.action_move_in_invoice" model="ir.actions.act_window">
+        <field name="domain">[
+            ('move_type', 'in', ['in_invoice', 'in_refund']),
+            ('is_expense_bill', '=', False),
+        ]</field>
+    </record>
+
+    <record id="account.action_move_in_refund_type" model="ir.actions.act_window">
+        <field name="domain">[
+            ('move_type', 'in', ['in_invoice', 'in_refund']),
+            ('is_expense_bill', '=', False),
+        ]</field>
+    </record>
+
+</odoo>

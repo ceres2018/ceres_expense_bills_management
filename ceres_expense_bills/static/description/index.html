@@ -1,0 +1,215 @@
+<div id="module-description">
+  <div class="container">
+    <div class="oe_styling_v8">
+
+      <!-- HERO -->
+      <section style="background:linear-gradient(135deg,#ecfdf5 0%,#f0fdfa 100%); padding:48px 24px; border-radius:16px; margin-bottom:32px;">
+        <div class="row align-items-center">
+          <div class="col-md-2 text-center">
+            <img src="icon.png" alt="Ceres Expense Bills Management" style="height:72px"/>
+          </div>
+          <div class="col-md-10">
+            <h1 style="color:#0f766e; font-size:36px; font-weight:700; margin-bottom:8px;">Ceres Expense Bills Management</h1>
+            <h2 style="color:#134e4a; font-size:20px; font-weight:500; margin-bottom:16px;">Separate Expense Bills from Vendor Bills in Odoo 18</h2>
+            <p style="font-size:16px; color:#334155; line-height:1.6; max-width:900px;">
+              Built for <strong>Odoo 18 Community Edition</strong> and fully compatible with
+              <strong>Odoo 18 Enterprise</strong>. Bills generated through the standard Expenses
+              workflow are identified, managed under <strong>Expenses &gt; Expense Bills</strong>,
+              and excluded from <strong>Accounting &gt; Vendor Bills</strong>. Category filtering,
+              grouping, posting, payments, and reconciliation remain fully standard.
+            </p>
+            <p style="margin-top:16px;">
+              <span style="background:#0f766e;color:#fff;padding:6px 12px;border-radius:6px;margin-right:8px;font-size:13px;">Odoo 18 Community Edition</span>
+              <span style="background:#134e4a;color:#fff;padding:6px 12px;border-radius:6px;margin-right:8px;font-size:13px;">Enterprise Compatible</span>
+              <span style="background:#0f766e;color:#fff;padding:6px 12px;border-radius:6px;font-size:13px;">Multi-Company</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BUSINESS PROBLEM -->
+      <section style="margin-bottom:32px;">
+        <h3 style="color:#0f766e; font-size:26px; margin-bottom:16px;">Business Problem</h3>
+        <p style="font-size:15px; color:#334155; line-height:1.7;">
+          By default, accounting records created from employee expenses may appear together with normal
+          supplier/vendor bills under Accounting. This makes it difficult to identify expense-related
+          bills, manage reimbursements, analyze expenses separately, and keep vendor bill management clean.
+        </p>
+      </section>
+
+      <!-- SOLUTION -->
+      <section style="margin-bottom:32px;">
+        <h3 style="color:#0f766e; font-size:26px; margin-bottom:16px;">Solution</h3>
+        <div class="row">
+          <div class="col-md-6" style="margin-bottom:12px;">
+            <div style="background:#fff;border:1px solid #99f6e4;border-left:4px solid #0f766e;padding:16px;border-radius:8px;height:100%;">
+              Identifies bills via standard <code>expense_sheet_id</code> on <code>account.move</code> (Odoo 18 Expense Reports)
+            </div>
+          </div>
+          <div class="col-md-6" style="margin-bottom:12px;">
+            <div style="background:#fff;border:1px solid #99f6e4;border-left:4px solid #0f766e;padding:16px;border-radius:8px;height:100%;">
+              Provides <strong>Expenses &gt; Expense Bills</strong> with category filters and grouping
+            </div>
+          </div>
+          <div class="col-md-6" style="margin-bottom:12px;">
+            <div style="background:#fff;border:1px solid #99f6e4;border-left:4px solid #0f766e;padding:16px;border-radius:8px;height:100%;">
+              Keeps <strong>Vendor Bills</strong> clean for supplier invoices only
+            </div>
+          </div>
+          <div class="col-md-6" style="margin-bottom:12px;">
+            <div style="background:#fff;border:1px solid #99f6e4;border-left:4px solid #0f766e;padding:16px;border-radius:8px;height:100%;">
+              Preserves posting, payment, reconciliation, and reporting workflows
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORKFLOW -->
+      <section style="margin-bottom:40px; background:#f8fafc; padding:32px 24px; border-radius:16px;">
+        <h3 style="color:#0f766e; font-size:26px; margin-bottom:24px; text-align:center;">Workflow</h3>
+        <div class="row">
+          <div class="col-md-6" style="margin-bottom:24px;">
+            <h4 style="color:#134e4a; text-align:center;">Expense Workflow</h4>
+            <div style="background:#fff;border:1px solid #cbd5e1;border-radius:12px;padding:20px;text-align:center;line-height:2;">
+              Expense Report Created<br/>
+              <span style="color:#0f766e;font-size:20px;">&#8595;</span><br/>
+              Submitted<br/>
+              <span style="color:#0f766e;font-size:20px;">&#8595;</span><br/>
+              Approved<br/>
+              <span style="color:#0f766e;font-size:20px;">&#8595;</span><br/>
+              Post Entries<br/>
+              <span style="color:#0f766e;font-size:20px;">&#8595;</span><br/>
+              <strong>Expenses &gt; Expense Bills</strong><br/>
+              <span style="color:#0f766e;font-size:20px;">&#8595;</span><br/>
+              Category Filtering / Grouping<br/>
+              <span style="color:#0f766e;font-size:20px;">&#8595;</span><br/>
+              Payment Processing
+            </div>
+          </div>
+          <div class="col-md-6" style="margin-bottom:24px;">
+            <h4 style="color:#134e4a; text-align:center;">Vendor Bill Workflow</h4>
+            <div style="background:#fff;border:1px solid #cbd5e1;border-radius:12px;padding:20px;text-align:center;line-height:2;">
+              Vendor Bill Created<br/>
+              <span style="color:#0f766e;font-size:20px;">&#8595;</span><br/>
+              <strong>Accounting &gt; Vendor Bills</strong><br/>
+              <span style="color:#0f766e;font-size:20px;">&#8595;</span><br/>
+              Validation / Posting<br/>
+              <span style="color:#0f766e;font-size:20px;">&#8595;</span><br/>
+              Payment Processing
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KEY FEATURES -->
+      <section style="margin-bottom:40px;">
+        <h3 style="color:#0f766e; font-size:26px; margin-bottom:20px; text-align:center;">Key Features</h3>
+        <div class="row">
+          <div class="col-md-4 col-sm-6" style="margin-bottom:12px;"><div style="padding:14px;background:#ecfdf5;border-radius:8px;text-align:center;font-weight:600;">Separate Expense Bills Menu</div></div>
+          <div class="col-md-4 col-sm-6" style="margin-bottom:12px;"><div style="padding:14px;background:#ecfdf5;border-radius:8px;text-align:center;font-weight:600;">Automatic Identification</div></div>
+          <div class="col-md-4 col-sm-6" style="margin-bottom:12px;"><div style="padding:14px;background:#ecfdf5;border-radius:8px;text-align:center;font-weight:600;">Expense Category Filtering</div></div>
+          <div class="col-md-4 col-sm-6" style="margin-bottom:12px;"><div style="padding:14px;background:#ecfdf5;border-radius:8px;text-align:center;font-weight:600;">Category-wise Grouping</div></div>
+          <div class="col-md-4 col-sm-6" style="margin-bottom:12px;"><div style="padding:14px;background:#ecfdf5;border-radius:8px;text-align:center;font-weight:600;">Clean Vendor Bills List</div></div>
+          <div class="col-md-4 col-sm-6" style="margin-bottom:12px;"><div style="padding:14px;background:#ecfdf5;border-radius:8px;text-align:center;font-weight:600;">Full Accounting Integration</div></div>
+          <div class="col-md-4 col-sm-6" style="margin-bottom:12px;"><div style="padding:14px;background:#ecfdf5;border-radius:8px;text-align:center;font-weight:600;">Payment Processing</div></div>
+          <div class="col-md-4 col-sm-6" style="margin-bottom:12px;"><div style="padding:14px;background:#ecfdf5;border-radius:8px;text-align:center;font-weight:600;">Multi-Company Support</div></div>
+          <div class="col-md-4 col-sm-6" style="margin-bottom:12px;"><div style="padding:14px;background:#ecfdf5;border-radius:8px;text-align:center;font-weight:600;">Standard Workflow Preserved</div></div>
+        </div>
+      </section>
+
+      <!-- SCREENSHOTS (captured from live Odoo 18 UI) -->
+      <section style="margin-bottom:40px;">
+        <h3 style="color:#0f766e; font-size:26px; margin-bottom:8px; text-align:center;">Screenshots</h3>
+        <p style="text-align:center; color:#64748b; font-size:14px; margin-bottom:28px;">
+          Real screenshots from Odoo 18 Community Edition after installing this module on a live database.
+        </p>
+
+        <div style="margin-bottom:40px; text-align:center;">
+          <h4 style="color:#134e4a; margin-bottom:8px;">1. Expense Bills Menu in Expenses App</h4>
+          <p style="color:#64748b; font-size:14px; max-width:760px; margin:0 auto 16px;">
+            New <strong>Expense Bills</strong> menu appears under Expenses, between Expense Reports and Reporting.
+          </p>
+          <img src="screenshots/expense_bills_menu.png" class="img img-fluid shadow" style="max-width:100%; border-radius:12px; border:1px solid #e2e8f0;" alt="Expenses app with Expense Bills menu"/>
+        </div>
+
+        <div style="margin-bottom:40px; text-align:center;">
+          <h4 style="color:#134e4a; margin-bottom:8px;">2. Expense Bills List View</h4>
+          <p style="color:#64748b; font-size:14px; max-width:760px; margin:0 auto 16px;">
+            Posted expense bills with <strong>Expense Categories</strong> tags, reference, totals, and payment status.
+            Only bills generated from Expense Reports are shown here.
+          </p>
+          <img src="screenshots/expense_bills_list.png" class="img img-fluid shadow" style="max-width:100%; border-radius:12px; border:1px solid #e2e8f0;" alt="Expense Bills list with category tags and paid status"/>
+        </div>
+
+        <div style="margin-bottom:40px; text-align:center;">
+          <h4 style="color:#134e4a; margin-bottom:8px;">3. Expense Bill Form with Categories</h4>
+          <p style="color:#64748b; font-size:14px; max-width:760px; margin:0 auto 16px;">
+            Standard vendor bill form with expense metadata: category tags, employee, Expense Report smart button,
+            invoice lines, and full payment workflow (Register Payment, reconciliation).
+          </p>
+          <img src="screenshots/expense_bill_form.png" class="img img-fluid shadow" style="max-width:100%; border-radius:12px; border:1px solid #e2e8f0;" alt="Expense bill form with categories and payment"/>
+        </div>
+
+        <div style="margin-bottom:40px; text-align:center;">
+          <h4 style="color:#134e4a; margin-bottom:8px;">4. Expense Category Filters</h4>
+          <p style="color:#64748b; font-size:14px; max-width:760px; margin:0 auto 16px;">
+            Filter expense bills by status: All Expense Bills, Draft, Posted, Paid, Not Paid, Partially Paid.
+            Search by expense category using the search bar (dynamic, based on configured expense products).
+          </p>
+          <img src="screenshots/expense_bills_filters.png" class="img img-fluid shadow" style="max-width:100%; border-radius:12px; border:1px solid #e2e8f0;" alt="Expense Bills filters dropdown"/>
+        </div>
+
+        <div style="margin-bottom:40px; text-align:center;">
+          <h4 style="color:#134e4a; margin-bottom:8px;">5. Group By Expense Category</h4>
+          <p style="color:#64748b; font-size:14px; max-width:760px; margin:0 auto 16px;">
+            Group expense bills by Expense Category, Employee, Status, Bill Date, or Payment Status for analysis.
+            Multi-category bills appear under each relevant category group.
+          </p>
+          <img src="screenshots/expense_bills_groupby.png" class="img img-fluid shadow" style="max-width:100%; border-radius:12px; border:1px solid #e2e8f0;" alt="Group by expense category"/>
+        </div>
+
+        <div style="margin-bottom:40px; text-align:center;">
+          <h4 style="color:#134e4a; margin-bottom:8px;">6. Vendor Bills Without Expense Bills</h4>
+          <p style="color:#64748b; font-size:14px; max-width:760px; margin:0 auto 16px;">
+            Standard <strong>Accounting &gt; Vendors &gt; Bills</strong> list shows only supplier/vendor invoices.
+            Expense reimbursement bills are excluded automatically.
+          </p>
+          <img src="screenshots/vendor_bills_separation.png" class="img img-fluid shadow" style="max-width:100%; border-radius:12px; border:1px solid #e2e8f0;" alt="Vendor Bills list without expense bills"/>
+        </div>
+      </section>
+
+      <!-- TECHNICAL -->
+      <section style="margin-bottom:32px; background:#f1f5f9; padding:28px; border-radius:12px;">
+        <h3 style="color:#0f766e; font-size:24px; margin-bottom:16px;">Technical Highlights</h3>
+        <ul style="font-size:15px; line-height:1.8; color:#334155;">
+          <li>Built for <strong>Odoo 18 Community Edition</strong>, fully compatible with Enterprise</li>
+          <li>Depends only on Community modules: <code>hr_expense</code>, <code>account</code></li>
+          <li>Extends <code>account.move</code> only (no duplicate accounting model)</li>
+          <li>Uses standard <code>expense_sheet_id</code> from Odoo 18 <code>hr_expense</code></li>
+          <li>Stored <code>is_expense_bill</code> with database index for fast domains</li>
+          <li>Many2many <code>expense_category_ids</code> for multi-category bills</li>
+          <li>No Odoo core modifications</li>
+        </ul>
+      </section>
+
+      <!-- COMPATIBILITY -->
+      <section style="margin-bottom:32px;">
+        <h3 style="color:#0f766e; font-size:24px; margin-bottom:12px;">Compatibility</h3>
+        <p style="font-size:15px;"><strong>Odoo Version:</strong> Odoo 18 Community Edition (Enterprise compatible)</p>
+        <p style="font-size:15px;"><strong>Dependencies:</strong> Expenses (<code>hr_expense</code>), Accounting (<code>account</code>) - Community modules only</p>
+        <p style="font-size:15px;"><strong>Enterprise:</strong> No Enterprise-only apps required. Works on Enterprise installations using the same standard Expenses and Accounting apps.</p>
+      </section>
+
+      <!-- SUPPORT -->
+      <section style="margin-bottom:24px; border-top:1px solid #e2e8f0; padding-top:24px;">
+        <h3 style="color:#0f766e; font-size:24px; margin-bottom:12px;">Support / Contact</h3>
+        <p style="font-size:15px; line-height:1.8;">
+          <strong>Company:</strong> Ceres - IT Solution<br/>
+          <strong>Website:</strong> <a href="https://www.ceresitsolution.com/" target="_blank">https://www.ceresitsolution.com/</a><br/>
+          <strong>Email:</strong> <a href="mailto:info@ceresitsolution.com">info@ceresitsolution.com</a>
+        </p>
+      </section>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_expense_bills"
+        name="Expense Bills"
+        parent="hr_expense.menu_hr_expense_root"
+        action="action_expense_bills"
+        sequence="3"
+        groups="hr_expense.group_hr_expense_user,account.group_account_readonly"/>
+
+</odoo>

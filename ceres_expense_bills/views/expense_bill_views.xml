@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Expense Bills list: standard vendor bill columns + category tags -->
+    <record id="view_expense_bill_tree" model="ir.ui.view">
+        <field name="name">account.move.expense.bill.list</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_in_invoice_bill_tree"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="invoice_partner_display_name" position="after">
+                <field name="expense_category_ids" widget="many2many_tags" string="Expense Categories" optional="show"/>
+                <field name="expense_employee_ids" widget="many2many_tags" string="Employees" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Dedicated search view with dynamic category panel and group-by -->
+    <record id="view_expense_bill_search" model="ir.ui.view">
+        <field name="name">account.move.expense.bill.search</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_bill_filter"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="expense_category_ids" string="Expense Category"/>
+                <field name="expense_employee_ids" string="Employee"/>
+            </field>
+            <filter name="draft" position="before">
+                <filter name="all_expense_bills" string="All Expense Bills" domain="[('is_expense_bill', '=', True)]"/>
+                <separator/>
+            </filter>
+            <filter name="open" position="after">
+                <filter name="expense_not_paid" string="Not Paid"
+                        domain="[('is_expense_bill', '=', True), ('state', '=', 'posted'), ('payment_state', 'in', ('not_paid', 'partial'))]"/>
+                <filter name="expense_partial" string="Partially Paid"
+                        domain="[('is_expense_bill', '=', True), ('payment_state', '=', 'partial')]"/>
+                <filter name="expense_paid" string="Paid"
+                        domain="[('is_expense_bill', '=', True), ('payment_state', 'in', ('paid', 'in_payment'))]"/>
+            </filter>
+            <group position="inside">
+                <filter string="Expense Category" name="groupby_expense_category"
+                        context="{'group_by': 'expense_category_ids'}"/>
+                <filter string="Employee" name="groupby_expense_employee"
+                        context="{'group_by': 'expense_employee_ids'}"/>
+                <filter string="Status" name="groupby_state"
+                        context="{'group_by': 'state'}"/>
+                <filter string="Bill Date" name="groupby_invoice_date"
+                        context="{'group_by': 'invoice_date'}"/>
+                <filter string="Payment Status" name="groupby_payment_state"
+                        context="{'group_by': 'payment_state'}"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="action_expense_bills" model="ir.actions.act_window">
+        <field name="name">Expense Bills</field>
+        <field name="res_model">account.move</field>
+        <field name="path">expense-bills</field>
+        <field name="view_mode">list,kanban,form,activity</field>
+        <field name="view_id" ref="view_expense_bill_tree"/>
+        <field name="search_view_id" ref="view_expense_bill_search"/>
+        <field name="domain">[('is_expense_bill', '=', True)]</field>
+        <field name="context">{
+            'search_default_all_expense_bills': 1,
+            'create': False,
+        }</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No expense bills yet</p>
+            <p>
+                Bills generated from approved and posted expenses appear here.
+                Filter and group them by expense category from the search bar and Group By menu.
+            </p>
+        </field>
+    </record>
+
+</odoo>
